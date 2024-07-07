@@ -1,4 +1,4 @@
-from flask import Flask, jsonify, request
+from flask import Flask, jsonify, redirect, request
 app = Flask(__name__)
 
 @app.post('/shorten') 
@@ -12,7 +12,7 @@ def shorten():
 
    return long_url
 
-@app.get('/longURL/<shortURL>')
+@app.get('/<shortURL>')
 def getLongURL(shortURL):
    # logic to fetch long url of this short url
-   return "https://www.google.com"
+   return redirect("https://www.google.com", code=301)
