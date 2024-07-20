@@ -24,7 +24,6 @@ def shorten():
    # if hash in __mappings:
    #    hash = createHash(datetime.now(timezone.utc) + long_url)
    s_hash = str(hash)
-   # __mappings[s_hash] = long_url
    try:
       pushHash(s_hash, long_url)
    except Exception as e:
